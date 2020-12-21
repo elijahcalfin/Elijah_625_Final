@@ -139,7 +139,7 @@ void List::starSearch()
 void List::ReadText(int skiplines, std::string filname)
 {
     nodePtr n = new node;
-    std::ifstream file(filname);
+    std::ifstream file(filname.c_str());
     std::string str;
     std::string word;
     int xCount = 1; 
@@ -259,7 +259,7 @@ void List::DataEntry()
     cout<<"Please enter the name of the .txt file: ";
     cin>>whichTxt;
     int inList;
-    ifstream file(whichTxt);
+    ifstream file(whichTxt.c_str());
     string cstr;
     string headercount;
     int convertInt;
