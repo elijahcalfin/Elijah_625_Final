@@ -136,10 +136,10 @@ void List::starSearch()
         cout<<"The search parameter was not found.\n";  
     }
 }
-void List::ReadText(int skiplines)
+void List::ReadText(int skiplines, std::string filname)
 {
     nodePtr n = new node;
-    std::ifstream file("videodb1.txt");
+    std::ifstream file(filname);
     std::string str;
     std::string word;
     int xCount = 1; 
@@ -259,13 +259,13 @@ void List::DataEntry()
     cout<<"Please enter the name of the .txt file: ";
     cin>>whichTxt;
     int inList;
-    ifstream cfile(whichTxt);
+    ifstream file(whichTxt);
     string cstr;
     string headercount;
     int convertInt;
     int cxCount = 0; 
     int q = 1;
-    while (std::getline(cfile, cstr)&&cxCount<1)
+    while (std::getline(file, cstr)&&cxCount<1)
     {
         headercount = headercount +cstr[0];
         headercount = headercount +cstr[1];
@@ -311,7 +311,7 @@ void List::DataEntry()
     {
         while(convertInt > q)
         {
-            ReadText(q);
+            ReadText(q,whichTxt);
             q = q+1;
         }
         cout<<"File read in!\n";

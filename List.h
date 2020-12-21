@@ -1,6 +1,7 @@
 #ifndef LIST_H_INCLUDED
 #define LIST_H_INCLUDED
 #include <string>
+#include <fstream>
 
 class List{
 private:
@@ -36,7 +37,7 @@ private:
 public:
     List();
     void UI();
-    void ReadText(int skiplines);
+    void ReadText(int skiplines, std::string filname);
     void starSearch();
     void genSearch(int varType);
     void PrintList();
